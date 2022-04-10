@@ -1,0 +1,272 @@
+/* Site Stylesheet
+  1. Global Styles
+  2. Navigation bar
+  3. Structure Styles
+  4. Module Styles
+  5. Component Styles
+  6. Page Styles
+======================================== */
+
+/* Universal Styles */
+@font-face {
+    font-family:'Whitney';
+    src: url('Resources/Fonts/WHITNEY-MEDIUM.OTF') format('opentype');
+    font-family:'Boycott';
+    src: url('Resources/Fonts/BOYCOTT.OTF') format('opentype')
+}
+
+html    {
+    font-family: 'Whitney';
+    box-sizing: border-box;
+    font-size: 16px;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+header .content {
+    background-image: url('./Resources/depositphotos_36993033-stock-photo-cardboard-carton-background-paper-texture.jpeg');
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.main-content   {
+    position:relative; 
+    left: 25%; /* to offset the vertical navigation bar */
+}
+.center {
+    text-align: center;
+    
+}
+
+.left   {
+    text-align: left;
+    padding: 0 1rem;
+}
+.image-container {
+    overflow: hidden;
+}
+  
+.image-container img {
+    display: inline-block;
+    max-width: 100%;
+}
+nav .button:hover {
+    color: lightgray;
+}
+
+nav .hover-underline {
+    position: relative;
+    text-decoration: none;
+    display: inline-block;
+}
+nav .hover-underline::before {
+    content: '';
+    position: absolute;
+    display:block;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: darkolivegreen;
+    transform-origin: bottom left;
+    transition: transform 0.35s ease-out;
+    left: 25%;
+    right: 25%;
+}
+nav .hover-underline:hover::before {
+    transform: scaleX(1);
+    
+}
+nav .hover-underline:hover {
+    color:white;
+}
+
+h1  {
+    font-family: 'Boycott';
+    font-size: 2rem;
+}
+h2  {
+    font-family:'Whitney';
+    font-size: 1.5rem;
+}
+h3  {
+    font-family:'Whitney';
+    font-size: 0.8rem;
+}
+h4  {
+    font-family:'Whitney';
+    font-size: 0.5rem;
+}
+/* Navigation Bar */
+header  {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    background-color: #f1f1f1;
+    height: 100%;
+    position: fixed; /* Make it stick, even on scroll */
+    cursor:pointer;
+    }
+      
+ul li  {
+    color: black;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+}
+ul li a {
+    text-decoration: none;
+    color: black;
+}
+header .content {
+    display: flex;
+    flex-direction: column;
+    padding: 1.875rem;
+    align-items: center;
+    align-content: center;
+  }
+
+header nav ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    align-items: center;
+    align-content: center;
+    padding-right: 2.3rem;
+  }
+#mainlogo   {
+    display:inline-block;
+    width: 125px;
+    height: 125px;
+}
+
+header .icon {
+    width: 1rem;
+    padding-left: 0;
+  }
+
+header nav .button {
+    padding: 1rem 1rem;
+    margin: 2rem;
+    background-color:darkolivegreen;
+    line-height: 1.6;
+    color: black;
+    white-space: nowrap;
+}
+/* About Us Section */
+
+#about-us {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    width: 75%;
+    position:relative;
+    z-index: -1;
+    
+  }
+
+#about-us .center {
+    position: relative;
+    display:flex;
+    align-items: center;
+    background-color: white;
+    max-width: 80%;
+    font-size: 14px;
+}
+
+#about-us .image-container {
+    width: 70%;
+    height: 100%;
+    margin: 0 1rem;
+  }
+
+#about-us .content {
+    width: 70%;
+    height: 80%;
+    line-height: 1.6;
+    padding: 1rem ;
+}
+
+/* The Menu Section */
+#our-menu {
+    background-color: #fffae4;
+    position:relative;
+    width: 75%;
+    margin: 0 .5rem;
+}
+
+#our-menu .content  {
+    display:inline-block;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding: 20px;
+}
+#our-menu nav ul {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;  
+}
+#our-menu nav li    {
+    margin: 0px -1rem;
+    display: flex;
+    height: 50%;
+    position: relative;
+      
+}
+#our-menu nav a    {
+    z-index: 1;
+    color: black;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 30px 5px;  
+    white-space: nowrap;
+    overflow: hidden;
+}
+#our-menu nav li:before {
+    content: "";
+    position: absolute;
+    display:block;
+    height: 50%;
+    width: 0%;
+    background-color: mediumseagreen;
+    border: solid 0.1px;
+    z-index: 0;
+    top: 30%;
+    bottom: 70%;
+    transition: all 0.5s;
+    left: 15%;
+    right: 10%;   
+ }
+#our-menu nav li:hover:before,
+#our-menu nav li:hover:after,
+#our-menu nav li:hover #our-menu nav a:before{
+    width: 70%;
+ }
+
+/* Menu Section */
+
+.menu-container {
+    display: flex;
+    align-items: center;
+    align-content:center;
+    width: 75%;
+    margin: 0rem .5rem;
+    background-color:#fffae4; 
+    position: relative;
+    flex-wrap: wrap;
+    bottom:16px;
+}
+
+.food-container {
+    display: inline-block;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    text-align:center;    
+}
